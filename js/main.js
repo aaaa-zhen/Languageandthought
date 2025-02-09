@@ -7,6 +7,15 @@
       document.body.setAttribute('data-theme', 'dark');
   }
 
+  // 监听系统主题变化
+  prefersDarkScheme.addEventListener('change', (e) => {
+      if (e.matches) {
+          document.body.setAttribute('data-theme', 'dark');
+      } else {
+          document.body.removeAttribute('data-theme');
+      }
+  });
+
   themeToggle.addEventListener('click', () => {
       const currentTheme = document.body.getAttribute('data-theme');
       if (currentTheme === 'dark') {
